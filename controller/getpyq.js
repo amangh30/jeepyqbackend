@@ -18,8 +18,8 @@ export const getallpyq = async(req,res)=>{
 
 
 export const getfile=async(req,res)=>{
-       const fileName = req.params.filename;
-    const filePath = path.join(__dirname, '..', './tmp', fileName);
+    const fileName = req.params.filename;
+  const filePath = `/tmp/${fileName}`;
     console.log(filePath)
   
     fs.exists(filePath, (exists) => {
