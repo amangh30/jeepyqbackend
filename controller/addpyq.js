@@ -10,7 +10,6 @@ const addpyq=(req,res)=>{
     if(req.file){
         pyq.file = req.file.filename
     }
-    console.log("aya")
     pyq.save()
     .then(response=>{
         res.json({
