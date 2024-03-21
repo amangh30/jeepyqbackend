@@ -1,11 +1,16 @@
 import express from "express"
 import router from "./router/route.js";
 import Connection from './db.js';
-import cors from "cors"
+const cors = require('cors');
 
 const app = express();
 Connection();
-app.use(cors())
+const corsOptions ={
+    origin:'https://jeepyq.vercel.app', 
+    credentials:true,            
+    optionSuccessStatus:200
+}
+app.use(cors(corsOptions));
 app.use(express.json())
 app.use(router)
 
