@@ -20,18 +20,13 @@ export const getallpyq = async(req,res)=>{
 export const getfile=async(req,res)=>{
     const fileName = req.params.filename;
     const filePath = path.join('/tmp', fileName);
-
-    // Check if the file exists
-    if (fs.existsSync(filePath)) {
-        // Set appropriate headers for the response
-        res.setHeader('Content-disposition', 'attachment; filename=' + filename);
-        res.setHeader('Content-type', 'application/pdf');
-
-        // Stream the file to the response
-        const fileStream = fs.createReadStream(filePath);
-        fileStream.pipe(res);
-    } else {
-        res.status(404).send('File not found');
-    }
-});
+    console.log(filePath)
+  
+    fs.exists(filePath, (exists) => {
+      if (exists) {
+        res.download(filePath);
+      } else {
+        res.status(404).send('File not found.');
+      }
+    });
 };
