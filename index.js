@@ -1,7 +1,7 @@
 import express from "express"
 import router from "./router/route.js";
 import Connection from './db.js';
-const cors = require('cors');
+import cors from 'cors'
 
 const app = express();
 Connection();
