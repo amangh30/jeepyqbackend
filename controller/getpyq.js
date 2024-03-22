@@ -11,7 +11,7 @@ export const getallpyq = async(req,res)=>{
         // Fetch data from the database
         const data = await Pyq.find();
          console.log(data)
-        res.json({message:success});
+         return res.status(200).send('Invalid file ID.');
     } catch (error) {
         res.status(500).json({ message: error.message });
     }
