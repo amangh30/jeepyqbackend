@@ -9,7 +9,7 @@ const router = express.Router();
 
 
 router.get('/getall',getallpyq)
-router.get('/getfile/:filename',getfile)
+router.get('/getfile/:id',getfile)
 router.post('/check',check)
 router.post('/msg',sendmsg)
 router.post('/add',upload.single('file'),addpyq)

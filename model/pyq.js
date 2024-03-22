@@ -14,7 +14,9 @@ const pyqSchema = new mongoose.Schema({
         type: String
     },
     file:{
-        type:String
+        filename: String,
+        contentType: String,
+        data: Buffer
     }
 });
 
