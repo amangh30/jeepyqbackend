@@ -7,7 +7,6 @@ import { getallpyq, getfile } from "../controller/getpyq.js";
 
 const router = express.Router();
 
-
 router.get('/getall',getallpyq)
 router.get('/getfile/:id',getfile)
 router.post('/check',check)
