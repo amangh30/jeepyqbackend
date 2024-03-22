@@ -9,6 +9,7 @@ const __dirname = dirname(__filename);
 export const getallpyq = async(req,res)=>{
     try {
         // Fetch data from the database
+        console.log('aya)
         const data = await Pyq.find();
         res.status(200).json(data);
     } catch (error) {
