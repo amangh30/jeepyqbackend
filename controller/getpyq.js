@@ -11,7 +11,7 @@ export const getallpyq = async(req,res)=>{
         // Fetch data from the database
         const data = await Pyq.find();
          console.log(data)
-        res.json(data);
+        res.send(data);
     } catch (error) {
         res.status(500).json({ message: error.message });
     }
