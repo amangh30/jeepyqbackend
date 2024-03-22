@@ -10,7 +10,7 @@ export const getallpyq = async(req,res)=>{
     try {
         // Fetch data from the database
         const data = await Pyq.find();
-        res.json(data);
+        res.status(200).json(data);
     } catch (error) {
         res.status(500).json({ message: error.message });
     }
